@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_contact_page_phone_numbers",
+  "info": {
+    "name": "phoneNumber",
+    "icon": "phone-alt"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    }
+  }
+}

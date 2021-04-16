@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/settings",
+      "handler": "acuity.retrieveSettings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/settings",
+      "handler": "acuity.updateSettings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/appointments",
+      "handler": "acuity.getAppointments",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/appointment-addons",
+      "handler": "acuity.getAppointmentAddons",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/appointment-dates",
+      "handler": "acuity.appointmentDates",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/appointment-times",
+      "handler": "acuity.appointmentTimes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/create-appointment",
+      "handler": "acuity.createAppointment",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

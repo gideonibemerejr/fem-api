@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_contact_page_social_medias",
+  "info": {
+    "name": "socialMedia",
+    "icon": "at"
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

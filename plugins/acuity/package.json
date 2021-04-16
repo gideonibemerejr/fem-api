@@ -1,0 +1,32 @@
+{
+  "name": "strapi-plugin-acuity",
+  "version": "0.0.0",
+  "description": "An integration to include acuity scheduling information in the data store of Strapi.",
+  "strapi": {
+    "name": "Acuity",
+    "icon": "calendar",
+    "description": "An integration to include acuity scheduling information in the data store of Strapi"
+  },
+  "dependencies": {
+    "@buffetjs/core": "^3.3.3",
+    "acuityscheduling": "^0.1.9",
+    "styled-components": "^5.2.1"
+  },
+  "author": {
+    "name": "Gideon Ibemere, Jr",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "Gideon Ibemere, Jr",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

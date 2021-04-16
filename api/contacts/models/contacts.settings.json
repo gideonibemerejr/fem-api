@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "name": "contacts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "pageTitle": {
+      "type": "string"
+    },
+    "contactPoints": {
+      "type": "dynamiczone",
+      "components": [
+        "contact-page.contact",
+        "contact-page.phone-number",
+        "contact-page.social-media"
+      ]
+    }
+  }
+}
