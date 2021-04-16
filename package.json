@@ -20,7 +20,8 @@
     "strapi-plugin-email": "3.5.1",
     "strapi-plugin-upload": "3.5.1",
     "knex": "<0.20.0",
-    "strapi-connector-mongoose": "^3.4.1"
+    "strapi-connector-mongoose": "^3.4.1",
+    "acuityscheduling": "^0.1.9"
   },
   "author": {
     "name": "Gideon Ibemere, Jr"
