@@ -158,6 +158,8 @@ module.exports = {
         body.appointmentTypeId
       }&${parameterizeArray("addonIDs", body.addonIDs)}`,
       function (err, res, appointmentDates) {
+        console.log("line 161 req body", body);
+        console.log("line 161 appt dates res", appointmentDates);
         ctx.send({ appointmentDates });
       }
     );
