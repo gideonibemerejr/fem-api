@@ -32,6 +32,19 @@
       "private": true,
       "required": true,
       "unique": true
+    },
+    "reason": {
+      "type": "enumeration",
+      "enum": [
+        "general",
+        "lostAndFound",
+        "troubleBooking",
+        "workAtFem",
+        "retail",
+        "events"
+      ],
+      "required": true,
+      "default": "general"
     }
   }
 }

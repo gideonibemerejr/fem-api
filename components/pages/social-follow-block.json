@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_pages_social_follow_blocks",
+  "info": {
+    "name": "Social Follow Block",
+    "icon": "users",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "socialLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.social-link"
+    }
+  }
+}

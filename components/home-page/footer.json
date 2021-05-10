@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_page_footers",
+  "info": {
+    "name": "Footer",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "socialLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.social-link"
+    }
+  }
+}
