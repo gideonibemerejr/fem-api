@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_home_page_navigations",
+  "info": {
+    "name": "Navigation",
+    "icon": "map-marked",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "navLink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home-page.nav-link"
+    }
+  }
+}
