@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "portrait_pages",
+  "info": {
+    "name": "Portrait Page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pages.video"
+    }
+  }
+}
