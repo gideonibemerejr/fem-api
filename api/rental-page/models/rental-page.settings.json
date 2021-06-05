@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "rental_pages",
   "info": {
-    "name": "Rental Page"
+    "name": "Rental Page",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -17,6 +18,11 @@
     },
     "description": {
       "type": "richtext"
+    },
+    "clientList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.image-link"
     }
   }
 }
