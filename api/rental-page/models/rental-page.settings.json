@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "rental_pages",
+  "info": {
+    "name": "Rental Page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "carousel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "pages.carousel"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
