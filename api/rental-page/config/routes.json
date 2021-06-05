@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/rental-page",
+      "handler": "rental-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/rental-page",
+      "handler": "rental-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/rental-page",
+      "handler": "rental-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
