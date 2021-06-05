@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pages_carousels",
+  "info": {
+    "name": "Carousel",
+    "icon": "images"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "pages.slides"
+    }
+  }
+}
