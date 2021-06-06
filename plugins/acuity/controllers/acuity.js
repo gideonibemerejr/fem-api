@@ -216,7 +216,7 @@ module.exports = {
 
     const { body } = ctx.request;
 
-    if (!body.firstName || !body.lastName || !body.email) {
+    if (!body.firstName || !body.lastName || !body.email || !body.phone) {
       return ctx.throw(400, "Please make sure all fields are filled correctly");
     }
 
