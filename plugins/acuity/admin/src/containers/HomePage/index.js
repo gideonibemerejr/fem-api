@@ -44,7 +44,9 @@ const HomePage = () => {
         },
       });
 
-      strapi.notification.success("Successfully updated stripe information");
+      strapi.notification.success(
+        "Successfully updated Acuity Scheduling information"
+      );
     } catch (error) {
       strapi.notification.error(error.toString());
     }

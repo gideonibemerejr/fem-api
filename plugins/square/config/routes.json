@@ -2,8 +2,32 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/",
-      "handler": "square.index",
+      "path": "/settings",
+      "handler": "square.retrieveSettings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/settings",
+      "handler": "square.updateSettings",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/create-customer",
+      "handler": "square.createCustomer",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/create-payment",
+      "handler": "square.createPayment",
       "config": {
         "policies": []
       }

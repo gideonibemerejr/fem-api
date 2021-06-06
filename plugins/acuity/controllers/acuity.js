@@ -1,5 +1,5 @@
 "use strict";
-const controllerUtils = require("../utils/index");
+const controllerUtils = require("../../utils/index");
 const acuity = require("acuityscheduling");
 /**
  * acuity.js controller
@@ -199,7 +199,6 @@ module.exports = {
       }
     );
   },
-
   createAppointment: async (ctx) => {
     // Add your own logic here.
 

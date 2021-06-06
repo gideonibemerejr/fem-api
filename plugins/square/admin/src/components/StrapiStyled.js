@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Block = styled.div`
-  width: 100%;
+  width: 50%;
   position: relative;
   margin-bottom: 34px;
   background: #ffffff;
@@ -54,6 +54,8 @@ export const Block = styled.div`
 `;
 
 export const Container = styled.div`
+  display: flex;
+  justify-content: center;
   padding: 47px 13px 0 13px;
   > div {
     margin: 0;
