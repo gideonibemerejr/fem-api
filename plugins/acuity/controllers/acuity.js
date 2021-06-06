@@ -201,10 +201,37 @@ module.exports = {
   },
   createAppointment: async (ctx) => {
     // Add your own logic here.
+    const pluginStore = controllerUtils.getStore();
 
-    // Send 200 `ok`
-    ctx.send({
-      message: "ok",
+    const getAcuitySettings = async (key1, key2) => {
+      const pk = await pluginStore.get({ key: key1 });
+      const userId = await pluginStore.get({ key: key2 });
+
+      return {
+        pk,
+        userId,
+      };
+    };
+    const { pk, userId } = await getAcuitySettings("pk", "userId");
+
+    const { body } = ctx.request;
+
+    const Acuity = acuity.basic({
+      userId,
+      apiKey: pk,
     });
+    const options = {
+      method: "POST",
+      body,
+    };
+    return Acuity.request(
+      "/appointments",
+      options,
+      function (err, res, appointment) {
+        ctx.send({
+          appointment: JSON.stringify(appointment, null, "  "),
+        });
+      }
+    );
   },
 };

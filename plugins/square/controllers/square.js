@@ -79,6 +79,7 @@ module.exports = {
     const customersApi = client.customersApi;
 
     try {
+      console.log(body);
       const { result, ...httpResponse } = await customersApi.createCustomer(
         body
       );
@@ -87,16 +88,54 @@ module.exports = {
 
       ctx.send({
         customer: {
+          id: customer.id,
           name: `${customer.givenName} ${customer.familyName}`,
           email: customer.emailAddress,
         },
       });
     } catch (error) {
+      console.log(error);
       if (error) {
         ctx.throw(400, error.result);
       }
     }
   },
 
-  createPayment: async (ctx) => {},
+  createPayment: async (ctx) => {
+    const { body } = ctx.request;
+    const pluginStore = controllerUtils.getStore();
+
+    const getSquareSettings = async (key) => {
+      const apiKey = await pluginStore.get({ key: key });
+      return apiKey;
+    };
+    const apiKey = await getSquareSettings("squarePk");
+
+    const client = new Client({
+      environment: Environment.Sandbox,
+      accessToken: apiKey,
+    });
+
+    const paymentsApi = client.paymentsApi;
+
+    try {
+      console.log(body);
+      const { result, ...httpResponse } = await paymentsApi.createPayment(body);
+
+      const { payment } = result;
+
+      ctx.send({
+        payment: {
+          status: payment.status,
+
+          receipt: payment.receiptUrl,
+        },
+      });
+    } catch (error) {
+      if (error) {
+        console.log(error);
+        ctx.throw(400, error.result);
+      }
+    }
+  },
 };
