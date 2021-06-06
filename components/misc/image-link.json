@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_misc_image_links",
+  "info": {
+    "name": "Image Link",
+    "icon": "external-link-square-alt"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

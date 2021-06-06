@@ -12,23 +12,18 @@ import { request } from "strapi-helper-plugin";
 
 import * as Styled from "../../components/StrapiStyled";
 import { InputText, Button, Padded } from "@buffetjs/core";
+
 const HomePage = () => {
-  const [userId, setUserId] = useState("");
   const [pk, setPk] = useState("");
 
   useEffect(() => {
-    const loadAcuitySettings = async () => {
+    const loadSquareSettings = async () => {
       const res = await request(`/${pluginId}/settings`, {
         method: "GET",
       });
-
-      const { pk, userId } = res;
-
-      setPk(pk);
-      setUserId(userId);
+      setPk(res.pk);
     };
-
-    loadAcuitySettings();
+    loadSquareSettings();
   }, []);
 
   const updateSettings = async (e) => {
@@ -40,13 +35,13 @@ const HomePage = () => {
         method: "POST",
         body: {
           pk,
-          userId,
         },
       });
 
-      strapi.notification.success(
-        "Successfully updated Acuity Scheduling information"
-      );
+      res &&
+        strapi.notification.success(
+          "Successfully updated Square Payments information"
+        );
     } catch (error) {
       strapi.notification.error(error.toString());
     }
@@ -59,27 +54,17 @@ const HomePage = () => {
       <div className="col-md-12">
         <Styled.Container>
           <Styled.Block>
-            <h1>{toTitleCase(pluginId)} Scheduling</h1>
-            <p>Save your Acuity Scheduling information below</p>
+            <h1>{toTitleCase(pluginId)} Payments</h1>
+            <p>Save your Square Payments information below</p>
             <form onSubmit={updateSettings}>
               <div>
-                <label htmlFor="userId">Acuity Scheduling User ID</label>
-                <InputText
-                  name="userId"
-                  type="text"
-                  value={userId}
-                  onChange={(e) => setUserId(e.target.value)}
-                  placeholder="Acuity Scheduling API Key"
-                />
-              </div>
-              <div>
-                <label htmlFor="pk">Acuity Scheduling API Key</label>
+                <label htmlFor="pk">Square Payments API Key</label>
                 <InputText
                   name="pk"
                   type="password"
                   value={pk}
                   onChange={(e) => setPk(e.target.value)}
-                  placeholder="Acuity Scheduling API Key"
+                  placeholder="Square Payments API Key"
                 />
               </div>
               <Padded top>

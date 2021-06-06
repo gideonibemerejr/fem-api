@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "portrait_pages",
+  "collectionName": "rental_pages",
   "info": {
-    "name": "Portrait Page",
+    "name": "Rental Page",
     "description": ""
   },
   "options": {
@@ -11,15 +11,18 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "featurette": {
-      "type": "component",
-      "repeatable": false,
-      "component": "pages.video"
-    },
     "carousel": {
       "type": "component",
       "repeatable": false,
       "component": "pages.carousel"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "clientList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "misc.image-link"
     }
   }
 }
