@@ -100,6 +100,39 @@ module.exports = {
       }
     }
   },
+  createPayment: async (ctx) => {
+    const { body } = ctx.request;
+    const pluginStore = controllerUtils.getStore();
 
-  createPayment: async (ctx) => {},
+    const getSquareSettings = async (key) => {
+      const apiKey = await pluginStore.get({ key: key });
+      return apiKey;
+    };
+    const apiKey = await getSquareSettings("squarePk");
+
+    const client = new Client({
+      environment: Environment.Sandbox,
+      accessToken: apiKey,
+    });
+
+    const paymentsApi = client.paymentsApi;
+
+    try {
+      const { result, ...httpResponse } = await paymentsApi.createPayment(body);
+
+      const { payment } = result;
+
+      ctx.send({
+        payment: {
+          status: payment.status,
+          receipt: payment.receiptUrl,
+        },
+      });
+    } catch (error) {
+      if (error) {
+        console.log(error);
+        ctx.throw(400, error.result);
+      }
+    }
+  },
 };
