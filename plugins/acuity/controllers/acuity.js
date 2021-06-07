@@ -216,14 +216,22 @@ module.exports = {
 
     const { body } = ctx.request;
 
+    if (!body.firstName || !body.lastName || !body.email || !body.phone) {
+      return ctx.throw(400, "Please make sure all fields are filled correctly");
+    }
+
     const Acuity = acuity.basic({
       userId,
       apiKey: pk,
     });
     const options = {
       method: "POST",
-      body,
+      body: {
+        appointmentTypeID: body.appointmentTypeId,
+        ...body,
+      },
     };
+
     return Acuity.request(
       "/appointments",
       options,
