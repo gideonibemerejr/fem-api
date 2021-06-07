@@ -87,8 +87,11 @@ module.exports = {
 
       ctx.send({
         customer: {
-          name: `${customer.givenName} ${customer.familyName}`,
+          id: customer.id,
+          firstName: customer.givenName,
+          lastName: customer.familyName,
           email: customer.emailAddress,
+          phone: customer.phoneNumber,
         },
       });
     } catch (error) {
