@@ -158,8 +158,6 @@ module.exports = {
         body.appointmentTypeId
       }&${parameterizeArray("addonIDs", body.addonIDs)}`,
       function (err, res, appointmentDates) {
-        console.log("line 161 req body", body);
-        console.log("line 161 appt dates res", appointmentDates);
         ctx.send({ appointmentDates });
       }
     );
@@ -226,10 +224,7 @@ module.exports = {
     });
     const options = {
       method: "POST",
-      body: {
-        appointmentTypeID: body.appointmentTypeId,
-        ...body,
-      },
+      body,
     };
 
     return Acuity.request(
@@ -237,7 +232,9 @@ module.exports = {
       options,
       function (err, res, appointment) {
         ctx.send({
-          appointment: JSON.stringify(appointment, null, "  "),
+          id: appointment.id,
+          confirmationPage: appointment.confirmationPage,
+          location: appointment.location,
         });
       }
     );
