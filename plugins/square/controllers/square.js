@@ -87,7 +87,7 @@ module.exports = {
 
       ctx.send({
         customer: {
-          id: customer.id,
+          customerId: customer.id,
           firstName: customer.givenName,
           lastName: customer.familyName,
           email: customer.emailAddress,
